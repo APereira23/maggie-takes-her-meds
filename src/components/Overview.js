@@ -11,12 +11,16 @@ class Overview extends Component {
     const { items } = this.props;
     return (
       <div className="overview">
-        <EditList />        
+        <EditList />  
+        <br>
+        </br>
+        <br>
+        </br>
         {items.map((item) => {
           return (
-          <li className="overview-list-item" key={uniqid()}>
+          <p className="overview-list-item" key={uniqid()}>
             {item.name}: {item.quantity} - {item.dailyDose} a day
-          </li>
+          </p>
           );
         })}
       </div>

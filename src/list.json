@@ -26,6 +26,60 @@
       "name": "Topiramato",
       "quantity": 10,
       "dailyDose": 1
+    },
+    {
+      "name": "Aripiprazol",
+      "quantity": 10,
+      "dailyDose": 1
+    },
+    {
+      "name": "Risperidona",
+      "quantity": 10,
+      "dailyDose": 1
+
+    },
+    {
+      "name": "Rivotril",
+      "quantity": 10,
+      "dailyDose": 3
+
+    },
+    {
+      "name": "Lítio",
+      "quantity": 10,
+      "dailyDose": 1
+    },
+    {
+      "name": "Topiramato",
+      "quantity": 10,
+      "dailyDose": 1
+    },
+    {
+      "name": "Aripiprazol",
+      "quantity": 10,
+      "dailyDose": 1
+    },
+    {
+      "name": "Risperidona",
+      "quantity": 10,
+      "dailyDose": 1
+
+    },
+    {
+      "name": "Rivotril",
+      "quantity": 10,
+      "dailyDose": 3
+
+    },
+    {
+      "name": "Lítio",
+      "quantity": 10,
+      "dailyDose": 1
+    },
+    {
+      "name": "Topiramato",
+      "quantity": 10,
+      "dailyDose": 1
     }
   ]
 }
