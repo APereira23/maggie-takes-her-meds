@@ -23,7 +23,7 @@ header {
   overflow: scroll;
   margin-top: 10px;
   padding: 10px;
-  padding-left: 40px;
+  padding-left: 25%;
   padding-bottom: 20px;
   background-color: rgb(15, 242, 193);
   border-radius: 10px;
@@ -34,10 +34,15 @@ header {
 .overview-list-item {
   margin: 5px;  
 }
-.edit-button {
-  background-image: url(./edit-button.png);
+
+.edit-menu-header {
+  color: rgb(156, 76, 136);
+}
+
+.edit-open-button {
+  background-image: url(./icons/edit-button.png);
   background-size: 100%;
-  background-color: transparent;
+  background-color: rgba(216, 133, 195, 0.895);
   background-repeat: no-repeat;
   border: none;
   border-left: solid 3px transparent;
@@ -49,13 +54,46 @@ header {
   cursor: pointer;
 }
 
-.edit-button:hover {
+.edit-open-button:hover {
   background-color: rgb(216, 133, 195);
   transition: all 0.2s ease-in-out;
   box-shadow: 2px 2px 5px grey;
 
 }
 
+.edit-close-button {
+  background-image: url(./icons/edit-close-button.png);
+  background-size: 100%;
+  background-color: rgba(128, 128, 128, 0.387);
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 25%;
+  position: absolute;
+  left: 80%;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.edit-close-button:hover {
+  background-color: rgb(216, 133, 195);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 5px grey;
+
+}
+
+.text-edit-button {
+  background-image: url(./icons/edit-button.png);
+  background-size: 100%;
+  background-color: rgba(216, 133, 195, 0.895);
+  background-repeat: no-repeat;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 25%;
+  height: 1.2rem;
+  width: 1.2rem;
+  cursor: pointer;
+}
 
 .refill-button-container {
   display: flex;

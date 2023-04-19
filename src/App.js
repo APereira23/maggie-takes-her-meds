@@ -10,15 +10,27 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: list.items
+      items: list.items,
+      editMode: false
     }
+    this.toggleEditMode = this.toggleEditMode.bind(this);
+  }
+
+  toggleEditMode() {
+    this.setState({
+      editMode: !this.state.editMode
+    });
   }
   
   render() {
     return (
       <div className="App">
         <Header />
-        <Overview items={this.state.items}/>
+        <Overview 
+          editMode={this.state.editMode} 
+          items={this.state.items} 
+          toggleEditMode={this.toggleEditMode}
+        />
         <Refill />
         <Footer />
       </div>
