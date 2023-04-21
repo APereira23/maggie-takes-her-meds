@@ -31,8 +31,15 @@ header {
   box-shadow: 2px 2px 5px grey;
 }
 
+
 .overview-list-item {
   margin: 5px;  
+}
+
+.item-header {
+  font-weight: 800;
+  background-color: rgba(240, 248, 255, 0.639);
+
 }
 
 .edit-menu-header {
@@ -86,6 +93,19 @@ header {
 
 .item-props-edit-button {
   background-image: url(./icons/edit-button.png);
+  background-size: 100%;
+  background-color: rgba(216, 133, 195, 0.895);
+  background-repeat: no-repeat;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 25%;
+  height: 1.2rem;
+  width: 1.2rem;
+  cursor: pointer;
+}
+
+.item-delete-button {
+  background-image: url(./icons/delete.png);
   background-size: 100%;
   background-color: rgba(216, 133, 195, 0.895);
   background-repeat: no-repeat;

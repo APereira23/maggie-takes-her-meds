@@ -19,6 +19,7 @@ class App extends Component {
     this.toggleEditItem = this.toggleEditItem.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleEditError = this.handleEditError.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   toggleEditMode() {
@@ -50,6 +51,12 @@ class App extends Component {
     })
   }
 
+  handleDelete(updatedItems) {
+    this.setState({
+      items: updatedItems
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -63,6 +70,7 @@ class App extends Component {
           toggleEditItem={this.toggleEditItem}
           onEdit={this.handleEdit}
           onError={this.handleEditError}
+          onDelete={this.handleDelete}
         />
         <Refill />
         <Footer />

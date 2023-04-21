@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EditButton from './EditButton';
+import DeleteButton from './DeleteButton';
 import EditItem from './EditItem';
 
 class Overview extends Component {
@@ -16,7 +17,8 @@ class Overview extends Component {
       toggleEditMode, 
       toggleEditItem, 
       onEdit,
-      onError 
+      onError,
+      onDelete
       } = this.props;
 
     if (editMode) return (
@@ -25,7 +27,7 @@ class Overview extends Component {
           editMode={editMode} 
           items={items} 
           toggleEditMode={toggleEditMode} 
-          />  
+        />  
         <br></br><br></br>
         <table>
           {items.map((item) => {
@@ -39,9 +41,9 @@ class Overview extends Component {
             return (
             <thead className="overview-list-item" key={item.id}>
               <tr>
-                <td>{item.name}</td>
+                <td className="item-header">{item.name}</td>
                 <td><button className="item-props-edit-button" onClick={() => toggleEditItem(item)}></button></td>
-                <td><button className="item-delete-button">Delete</button></td>
+                <td><DeleteButton target={item} items={items} onDelete={onDelete} /></td>
               </tr>
               <tr>
                 <td>In Stash:</td>
