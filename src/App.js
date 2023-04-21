@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Item } from './data.js';
 import list from './data.js';
 import Header from './components/Header';
 import Overview from './components/Overview';
@@ -24,6 +25,40 @@ class App extends Component {
     this.handleEdit = this.handleEdit.bind(this);
     this.handleEditError = this.handleEditError.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  //updates med counter everyday at 7a.m.
+  //NOT FUNCTIONAL (only runs with component open)
+  componentDidMount() {
+    const now = new Date();
+    const next7am = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate() + 1, // next day
+      7, // 7am
+      0, // minutes
+      0 // seconds
+    );
+    const timeUntilNext7am = next7am - now;
+    function preventNegativeNums(nums) {
+      return (nums < 0) ? 0 : nums;
+    }
+    this.interval = setInterval(() => {
+      const updatedItems = this.state.items.map((item) => {
+        return new Item(
+          item.name,
+          preventNegativeNums(parseInt(item.quantity) - parseInt(item.dailyDose)),
+          item.dailyDose
+        );
+      });
+      this.setState({
+        items: updatedItems  
+      });
+    }, timeUntilNext7am);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   toggleEditMode() {
