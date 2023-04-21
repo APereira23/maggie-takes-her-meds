@@ -30,7 +30,7 @@ class Overview extends Component {
     // Displays "Refill Med Form"
     if (refillForm) return (
       <div className="overview">
-        <RefillForm items={items} />
+        <RefillForm items={items} onEdit={onEdit}/>
       </div>
     );
 

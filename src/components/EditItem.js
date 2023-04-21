@@ -55,6 +55,7 @@ class EditItem extends Component {
                 ref={this.editQuantityRef}
                 type="number"
                 size="1"
+                min="0"
                 defaultValue={item.quantity}
                 required
               />
@@ -68,6 +69,7 @@ class EditItem extends Component {
                 ref={this.editDailyDoseRef}
                 type="number"
                 size="1"
+                min="0"
                 defaultValue={item.dailyDose}
                 required
               />
