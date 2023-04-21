@@ -3,6 +3,7 @@ import EditButton from './EditButton';
 import DeleteButton from './DeleteButton';
 import EditItem from './EditItem';
 import AddItem from './AddItem';
+import RefillForm from './RefillForm';
 
 
 class Overview extends Component {
@@ -17,6 +18,7 @@ class Overview extends Component {
       editItem,
       error,
       newItemForm,
+      refillForm,
       toggleEditMode, 
       toggleEditItem,
       toggleNewItemForm,
@@ -24,6 +26,15 @@ class Overview extends Component {
       onError,
       onDelete,
       } = this.props;
+    
+    // Displays "Refill Med Form"
+    if (refillForm) return (
+      <div className="overview">
+        <RefillForm items={items} />
+      </div>
+    );
+
+    // Displays "Add new Item form"
     if (newItemForm) return (
       <div className="overview">
         <EditButton 
@@ -34,6 +45,8 @@ class Overview extends Component {
         <AddItem items={items} onEdit={onEdit} />
       </div>
     );
+
+    // Displays "Edit stash menu"
     if (editMode) return (
       <div className="overview">
         <EditButton 
@@ -73,6 +86,8 @@ class Overview extends Component {
         </table>
       </div>
     );
+
+    // Default: displays "My Stash"
     return (
       <div className="overview">
         <EditButton editMode={editMode} items={items} toggleEditMode={toggleEditMode}/>  
