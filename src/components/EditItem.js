@@ -39,11 +39,11 @@ class EditItem extends Component {
             <td>
               <input 
                 id="editName"
+                ref={this.editNameRef}
                 type="text"
                 size="10"
                 defaultValue={item.name}
                 required
-                ref={this.editNameRef}
               />
             </td>
           </tr>
@@ -52,11 +52,11 @@ class EditItem extends Component {
             <td>
               <input 
                 id="editQuantity"
+                ref={this.editQuantityRef}
                 type="number"
                 size="1"
                 defaultValue={item.quantity}
                 required
-                ref={this.editQuantityRef}
               />
             </td>
           </tr>
@@ -65,11 +65,11 @@ class EditItem extends Component {
             <td>
               <input 
                 id="editQuantity"
+                ref={this.editDailyDoseRef}
                 type="number"
                 size="1"
                 defaultValue={item.dailyDose}
                 required
-                ref={this.editDailyDoseRef}
               />
             </td>
           </tr>

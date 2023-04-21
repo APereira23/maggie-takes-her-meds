@@ -13,9 +13,7 @@ class DeleteButton extends Component {
   }
 
   render() {
-    return (
-      <button className="item-delete-button" onClick={this.delete}></button>
-    );
+    return <button className="item-delete-button" onClick={this.delete}></button>;
   }
 }
 

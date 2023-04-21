@@ -13,10 +13,12 @@ class App extends Component {
       items: list,
       editMode: false,
       editItem: '',
-      error: ''
+      error: '',
+      newItemForm: false
     }
     this.toggleEditMode = this.toggleEditMode.bind(this);
     this.toggleEditItem = this.toggleEditItem.bind(this);
+    this.toggleNewItemForm = this.toggleNewItemForm.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleEditError = this.handleEditError.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -26,7 +28,8 @@ class App extends Component {
     this.setState({
       editMode: !this.state.editMode,
       editItem: '',
-      error: ''
+      error: '',
+      newItemForm: false
     })
   }
 
@@ -36,12 +39,19 @@ class App extends Component {
       editItem: target.id
     })
   }
+
+  toggleNewItemForm() {
+    this.setState({
+      newItemForm: !this.state.newItemForm
+    })
+  }
   
   handleEdit(updatedItems) {
     this.setState({
       items: updatedItems,
       editItem: '',
-      error: ''
+      error: '',
+      newItemForm: false
     })
   }
 
@@ -66,8 +76,10 @@ class App extends Component {
           editItem={this.state.editItem}
           items={this.state.items}
           error={this.state.error}
+          newItemForm={this.state.newItemForm}
           toggleEditMode={this.toggleEditMode}
           toggleEditItem={this.toggleEditItem}
+          toggleNewItemForm={this.toggleNewItemForm}
           onEdit={this.handleEdit}
           onError={this.handleEditError}
           onDelete={this.handleDelete}

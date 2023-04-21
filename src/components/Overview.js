@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import EditButton from './EditButton';
 import DeleteButton from './DeleteButton';
 import EditItem from './EditItem';
+import AddItem from './AddItem';
+
 
 class Overview extends Component {
   constructor(props) {
@@ -14,21 +16,33 @@ class Overview extends Component {
       editMode, 
       editItem,
       error,
+      newItemForm,
       toggleEditMode, 
-      toggleEditItem, 
+      toggleEditItem,
+      toggleNewItemForm,
       onEdit,
       onError,
-      onDelete
+      onDelete,
       } = this.props;
-
+    if (newItemForm) return (
+      <div className="overview">
+        <EditButton 
+          editMode={editMode} 
+          items={items} 
+          toggleEditMode={toggleEditMode} 
+        />
+        <AddItem items={items} onEdit={onEdit} />
+      </div>
+    );
     if (editMode) return (
       <div className="overview">
         <EditButton 
           editMode={editMode} 
           items={items} 
           toggleEditMode={toggleEditMode} 
-        />  
+        />
         <br></br><br></br>
+        <button onClick={toggleNewItemForm}>Add New Item</button>
         <table>
           {items.map((item) => {
             if (editItem === item.id) return <EditItem 
