@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EditButton from './EditButton';
+import EditItem from './EditItem';
 import uniqid from 'uniqid';
 
 class Overview extends Component {
@@ -8,18 +9,23 @@ class Overview extends Component {
   };
 
   render() {
-    const { items, editMode, toggleEditMode } = this.props;
+    const { items, editMode, editItem, toggleEditMode, toggleEditItem } = this.props;
     if (editMode) return (
       <div className="overview">
-        <EditButton editMode={editMode} items={items} toggleEditMode={toggleEditMode} />  
+        <EditButton 
+          editMode={editMode} 
+          items={items} 
+          toggleEditMode={toggleEditMode} 
+          />  
         <br></br><br></br>
         <table>
           {items.map((item) => {
+            if (editItem) return <EditItem item={item} toggleEditItem={toggleEditItem} />
             return (
             <thead className="overview-list-item" key={uniqid()}>
               <tr>
                 <td>{item.name}</td>
-                <td><button className="text-edit-button"></button></td>
+                <td><button className="item-props-edit-button" onClick={() => toggleEditItem()}></button></td>
               </tr>
               <tr>
                 <td>In Stash:</td>

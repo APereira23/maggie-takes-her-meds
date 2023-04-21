@@ -66,6 +66,8 @@ header {
   background-size: 100%;
   background-color: rgba(128, 128, 128, 0.387);
   background-repeat: no-repeat;
+  box-shadow: 2px 2px 5px grey;
+
   border: none;
   border-radius: 25%;
   position: absolute;
@@ -82,7 +84,7 @@ header {
 
 }
 
-.text-edit-button {
+.item-props-edit-button {
   background-image: url(./icons/edit-button.png);
   background-size: 100%;
   background-color: rgba(216, 133, 195, 0.895);

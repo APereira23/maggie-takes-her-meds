@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import list from './list.json';
+import list from './data.js';
 import Header from './components/Header';
 import Overview from './components/Overview';
 import Refill from './components/Refill';
@@ -10,16 +10,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: list.items,
-      editMode: false
+      items: list,
+      editMode: false,
+      editItem: false
     }
     this.toggleEditMode = this.toggleEditMode.bind(this);
+    this.toggleEditItem = this.toggleEditItem.bind(this);
   }
 
   toggleEditMode() {
     this.setState({
       editMode: !this.state.editMode
-    });
+    })
+  }
+
+  toggleEditItem() {
+    this.setState({
+      editItem: !this.state.editItem
+    })
   }
   
   render() {
@@ -28,8 +36,10 @@ class App extends Component {
         <Header />
         <Overview 
           editMode={this.state.editMode} 
+          editItem={this.state.editItem}
           items={this.state.items} 
           toggleEditMode={this.toggleEditMode}
+          toggleEditItem={this.toggleEditItem}
         />
         <Refill />
         <Footer />
