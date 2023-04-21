@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import EditButton from './EditButton';
 import EditItem from './EditItem';
-import uniqid from 'uniqid';
 
 class Overview extends Component {
   constructor(props) {
@@ -9,7 +8,17 @@ class Overview extends Component {
   };
 
   render() {
-    const { items, editMode, editItem, toggleEditMode, toggleEditItem } = this.props;
+    const { 
+      items, 
+      editMode, 
+      editItem,
+      error,
+      toggleEditMode, 
+      toggleEditItem, 
+      onEdit,
+      onError 
+      } = this.props;
+
     if (editMode) return (
       <div className="overview">
         <EditButton 
@@ -20,12 +29,19 @@ class Overview extends Component {
         <br></br><br></br>
         <table>
           {items.map((item) => {
-            if (editItem) return <EditItem item={item} toggleEditItem={toggleEditItem} />
+            if (editItem === item.id) return <EditItem 
+              item={item} 
+              items={items} 
+              error={error}
+              onEdit={onEdit} 
+              onError={onError}
+            />
             return (
-            <thead className="overview-list-item" key={uniqid()}>
+            <thead className="overview-list-item" key={item.id}>
               <tr>
                 <td>{item.name}</td>
-                <td><button className="item-props-edit-button" onClick={() => toggleEditItem()}></button></td>
+                <td><button className="item-props-edit-button" onClick={() => toggleEditItem(item)}></button></td>
+                <td><button className="item-delete-button">Delete</button></td>
               </tr>
               <tr>
                 <td>In Stash:</td>
@@ -52,7 +68,7 @@ class Overview extends Component {
           <thead>
             {items.map((item) => {
               return (
-              <tr className="overview-list-item" key={uniqid()}>
+              <tr className="overview-list-item" key={item.id}>
                 <td>{item.name}</td>
                 <td>{item.quantity}un</td>
               </tr>

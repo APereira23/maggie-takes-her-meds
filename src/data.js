@@ -16,3 +16,5 @@ function Item(name, quantity, dailyDose) {
 }
 
 export default list;
+
+export { Item };

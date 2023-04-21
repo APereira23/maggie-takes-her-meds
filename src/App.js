@@ -12,24 +12,44 @@ class App extends Component {
     this.state = {
       items: list,
       editMode: false,
-      editItem: false
+      editItem: '',
+      error: ''
     }
     this.toggleEditMode = this.toggleEditMode.bind(this);
     this.toggleEditItem = this.toggleEditItem.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleEditError = this.handleEditError.bind(this);
   }
 
   toggleEditMode() {
     this.setState({
-      editMode: !this.state.editMode
+      editMode: !this.state.editMode,
+      editItem: '',
+      error: ''
     })
   }
 
-  toggleEditItem() {
+
+  toggleEditItem(target) {
     this.setState({
-      editItem: !this.state.editItem
+      editItem: target.id
     })
   }
   
+  handleEdit(updatedItems) {
+    this.setState({
+      items: updatedItems,
+      editItem: '',
+      error: ''
+    })
+  }
+
+  handleEditError(message) {
+    this.setState({
+      error: message
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -37,9 +57,12 @@ class App extends Component {
         <Overview 
           editMode={this.state.editMode} 
           editItem={this.state.editItem}
-          items={this.state.items} 
+          items={this.state.items}
+          error={this.state.error}
           toggleEditMode={this.toggleEditMode}
           toggleEditItem={this.toggleEditItem}
+          onEdit={this.handleEdit}
+          onError={this.handleEditError}
         />
         <Refill />
         <Footer />
