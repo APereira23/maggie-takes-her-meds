@@ -1,12 +1,6 @@
 import uniqid from "uniqid";
 
-const list = [
-  new Item("Aripiprazol", 1, "morning"),
-  new Item("Risperidona", 1, "morning"),
-  new Item("Rivotril", 1, "morning"),
-  new Item("Lítio", 1, "evening"),
-  new Item("Topiramato", 1, "sos"),
-];
+const list = [];
 
 function Item(name, dose, time) {
   this.name = name;
