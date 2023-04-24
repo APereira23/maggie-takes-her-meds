@@ -46,10 +46,24 @@ input {
 .item-header {
   font-weight: 800;
   background-color: rgba(240, 248, 255, 0.639);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5%;
+}
+
+.overview-display-item-prop {
+  background-color: rgba(240, 248, 255, 0.639);
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5%;
 }
 
 .edit-menu-header {
   color: rgb(156, 76, 136);
+  text-align: center;
+  margin-left: -15%;
+  text-shadow: 2px 2px 5px grey;
 }
 
 .edit-open-button {
@@ -65,6 +79,8 @@ input {
   height: 30px;
   width: 30px;
   cursor: pointer;
+  box-shadow: 2px 2px 5px grey;
+  
 }
 
 .edit-open-button:hover {
@@ -102,6 +118,7 @@ input {
   background-color: rgba(216, 133, 195, 0.895);
   background-repeat: no-repeat;
   margin-right: 15px;
+  margin-left: 10px;
   border: none;
   border-radius: 25%;
   height: 1.5rem;

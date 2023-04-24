@@ -60,6 +60,7 @@ class Overview extends Component {
           items={items} 
           toggleEditMode={toggleEditMode} 
         />
+        <br></br>
         <h2 className="edit-menu-header">
           My Stash
         </h2>
@@ -84,11 +85,11 @@ class Overview extends Component {
               </tr>
               <tr>
                 <td>How many:</td>
-                <td>{item.dose}</td>
+                <td className="overview-display-item-prop">{item.dose}</td>
               </tr>
               <tr>
                 <td>When to take:</td>
-                <td>{item.time}</td>
+                <td className="overview-display-item-prop">{item.time}</td>
               </tr>
             </thead>
             );
