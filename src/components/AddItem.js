@@ -45,9 +45,9 @@ class AddItem extends Component {
                 <td><input 
                   id="newDose"
                   ref={this.newDoseRef}
-                  type="number"
-                  size="1"
-                  pattern="[0-9]"
+                  type="text"
+                  size="5"
+                  maxLength="30"
                   required
                 /></td>
               </tr>
@@ -57,7 +57,7 @@ class AddItem extends Component {
                   id="newTime"
                   ref={this.newTimeRef}
                   type="text"
-                  size="10"
+                  size="5"
                   maxLength="30"
                   required
                 /></td>

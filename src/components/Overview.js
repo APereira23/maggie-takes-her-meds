@@ -74,6 +74,7 @@ class Overview extends Component {
             />
             return (
             <thead className="overview-list-item" key={item.id}>
+              <br></br>
               <tr>
                 <td className="item-header">{item.name}</td>
                 <td>

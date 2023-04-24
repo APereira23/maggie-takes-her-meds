@@ -54,9 +54,9 @@ class EditItem extends Component {
               <input 
                 id="editDose"
                 ref={this.editDoseRef}
-                type="number"
-                size="1"
-                min="0"
+                type="text"
+                size="5"
+                maxLength="30"
                 defaultValue={item.dose}
                 required
               />
@@ -70,7 +70,7 @@ class EditItem extends Component {
                 ref={this.editTimeRef}
                 type="text"
                 size="5"
-                min="0"
+                maxLength="30"
                 defaultValue={item.time}
                 required
               />
