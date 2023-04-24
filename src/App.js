@@ -8,7 +8,8 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    const storedState = localStorage.getItem('appState');
+    this.state = storedState ? JSON.parse(storedState) : {
       items: list,
       editMode: false,
       editItem: '',
@@ -65,6 +66,14 @@ class App extends Component {
     this.setState({
       items: updatedItems
     })
+  }
+
+  saveStateToLocalStorage() {
+    localStorage.setItem('appState', JSON.stringify(this.state));
+  }
+
+  componentDidUpdate() {
+    this.saveStateToLocalStorage();
   }
 
   render() {
