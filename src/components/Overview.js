@@ -3,7 +3,6 @@ import EditButton from './EditButton';
 import DeleteButton from './DeleteButton';
 import EditItem from './EditItem';
 import AddItem from './AddItem';
-import RefillForm from './RefillForm';
 
 
 class Overview extends Component {
@@ -18,7 +17,6 @@ class Overview extends Component {
       editItem,
       error,
       newItemForm,
-      refillForm,
       toggleEditMode, 
       toggleEditItem,
       toggleNewItemForm,
@@ -27,13 +25,6 @@ class Overview extends Component {
       onDelete,
       } = this.props;
     
-    // Displays "Refill Med Form"
-    if (refillForm) return (
-      <div className="overview">
-        <RefillForm items={items} onEdit={onEdit}/>
-      </div>
-    );
-
     // Displays "Add new Item form"
     if (newItemForm) return (
       <div className="overview">
@@ -46,16 +37,16 @@ class Overview extends Component {
       </div>
     );
 
-    // Displays "Edit stash menu"
-    if (editMode) return (
+    return (
       <div className="overview">
         <EditButton 
           editMode={editMode} 
           items={items} 
           toggleEditMode={toggleEditMode} 
         />
-        <br></br><br></br>
-        <button onClick={toggleNewItemForm}>Add New Item</button>
+        <h2 className="edit-menu-header">
+          My Stash
+        </h2>
         <table>
           {items.map((item) => {
             if (editItem === item.id) return <EditItem 
@@ -69,43 +60,22 @@ class Overview extends Component {
             <thead className="overview-list-item" key={item.id}>
               <tr>
                 <td className="item-header">{item.name}</td>
-                <td><button className="item-props-edit-button" onClick={() => toggleEditItem(item)}></button></td>
-                <td><DeleteButton target={item} items={items} onDelete={onDelete} /></td>
+                <td>
+                  <button className="item-props-edit-button" onClick={() => toggleEditItem(item)}></button>
+                  <DeleteButton target={item} items={items} onDelete={onDelete} />
+                </td>
               </tr>
               <tr>
-                <td>In Stash:</td>
-                <td>{item.quantity}</td>
+                <td>How many:</td>
+                <td>{item.dose}</td>
               </tr>
               <tr>
-                <td>Daily Dose:</td>
-                <td>{item.dailyDose}</td>
+                <td>When to take:</td>
+                <td>{item.time}</td>
               </tr>
             </thead>
             );
           })}
-        </table>
-      </div>
-    );
-
-    // Default: displays "My Stash"
-    return (
-      <div className="overview">
-        <EditButton editMode={editMode} items={items} toggleEditMode={toggleEditMode}/>  
-        <br></br>
-        <h2 className="edit-menu-header">
-          My Stash
-        </h2>
-        <table>
-          <thead>
-            {items.map((item) => {
-              return (
-              <tr className="overview-list-item" key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.quantity}un</td>
-              </tr>
-              );
-            })}
-          </thead>
         </table>
       </div>
     );

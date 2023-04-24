@@ -7,18 +7,18 @@ class AddItem extends Component {
     super();
     this.addItem = this.addItem.bind(this);
     this.newNameRef = React.createRef();
-    this.newQuantityRef = React.createRef();
-    this.newDailyDoseRef = React.createRef();
+    this.newDoseRef = React.createRef();
+    this.newTimeRef = React.createRef();
 
   }
 
   addItem(e) {
     const { items, onEdit } = this.props;
     const newName = this.newNameRef.current.value;
-    const newQuantity = this.newQuantityRef.current.value;
-    const newDailyDose = this.newDailyDoseRef.current.value;
+    const newDose = this.newDoseRef.current.value;
+    const newTime = this.newTimeRef.current.value;
     e.preventDefault();
-    const updatedItems = items.concat(new Item(newName, newQuantity, newDailyDose));
+    const updatedItems = items.concat(new Item(newName, newDose, newTime));
     onEdit(updatedItems);
   }
 
@@ -41,10 +41,10 @@ class AddItem extends Component {
                 /></td>
               </tr>
               <tr>
-                <td><label>Quantity: </label></td>
+                <td><label>Dose: </label></td>
                 <td><input 
-                  id="newQuantity"
-                  ref={this.newQuantityRef}
+                  id="newDose"
+                  ref={this.newDoseRef}
                   type="number"
                   size="1"
                   pattern="[0-9]"
@@ -52,13 +52,13 @@ class AddItem extends Component {
                 /></td>
               </tr>
               <tr>
-                <td><label>Daily dose: </label></td>
+                <td><label>When to take: </label></td>
                 <td><input 
-                  id="newDailyDose"
-                  ref={this.newDailyDoseRef}
-                  type="number"
-                  size="1"
-                  pattern="[0-9]"
+                  id="newTime"
+                  ref={this.newTimeRef}
+                  type="text"
+                  size="10"
+                  maxLength="20"
                   required
                 /></td>
               </tr>

@@ -7,24 +7,25 @@ class EditItem extends Component {
     super(props);
     this.edit = this.edit.bind(this);
     this.editNameRef = React.createRef();
-    this.editQuantityRef = React.createRef();
-    this.editDailyDoseRef = React.createRef();
+    this.editDoseRef = React.createRef();
+    this.editTimeRef = React.createRef();
 
   }
 
   edit() {
     const { item, items, onEdit, onError } = this.props;
     const newName = this.editNameRef.current.value;
-    let newQuantity = this.editQuantityRef.current.value;
-    let newDailyDose = this.editDailyDoseRef.current.value;
+    let newDose = this.editDoseRef.current.value;
+    let newTime = this.editTimeRef.current.value;
 
     if (newName === "") return onError("Error: name is empty");
     if (newName.length > 20) return onError("Error: 20 characters max");
-    if (newQuantity === "") newQuantity = 0;
-    if (newDailyDose === "") newDailyDose = 0;
+    if (newTime.length > 20) return onError("Error: 20 characters max");
+    if (newDose === "") newDose = 0;
+    if (newTime === "") newTime = 0;
     
     const updatedItems = items.map((newItem) => {
-      if (newItem.id === item.id) return new Item(newName, newQuantity, newDailyDose);
+      if (newItem.id === item.id) return new Item(newName, newDose, newTime);
       return newItem;
     })
     onEdit(updatedItems);
@@ -48,29 +49,29 @@ class EditItem extends Component {
             </td>
           </tr>
           <tr>
-            <td>In Stash:</td>
+            <td>How many:</td>
             <td>
               <input 
-                id="editQuantity"
-                ref={this.editQuantityRef}
+                id="editDose"
+                ref={this.editDoseRef}
                 type="number"
                 size="1"
                 min="0"
-                defaultValue={item.quantity}
+                defaultValue={item.Dose}
                 required
               />
             </td>
           </tr>
           <tr>
-            <td>Daily Dose:</td>
+            <td>When to take:</td>
             <td>
               <input 
-                id="editQuantity"
-                ref={this.editDailyDoseRef}
+                id="editDose"
+                ref={this.editTimeRef}
                 type="number"
                 size="1"
                 min="0"
-                defaultValue={item.dailyDose}
+                defaultValue={item.Time}
                 required
               />
             </td>
