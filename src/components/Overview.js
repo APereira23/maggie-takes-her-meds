@@ -19,7 +19,6 @@ class Overview extends Component {
       newItemForm,
       toggleEditMode, 
       toggleEditItem,
-      toggleNewItemForm,
       onEdit,
       onError,
       onDelete,
@@ -34,6 +33,23 @@ class Overview extends Component {
           toggleEditMode={toggleEditMode} 
         />
         <AddItem items={items} onEdit={onEdit} />
+      </div>
+    );
+
+    if (items.length === 0) return (
+      <div className="overview">
+        <EditButton 
+          editMode={editMode} 
+          items={items} 
+          toggleEditMode={toggleEditMode} 
+        />
+        <h2 className="edit-menu-header">
+          My Stash
+        </h2>
+        <div className="empty-list-message">
+          <p>Wow, so empty!</p>
+          <p>Click on the button on the upper right corner to start adding meds</p>
+        </div>
       </div>
     );
 

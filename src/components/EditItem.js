@@ -69,7 +69,7 @@ class EditItem extends Component {
                 id="editDose"
                 ref={this.editTimeRef}
                 type="text"
-                size="10"
+                size="5"
                 min="0"
                 defaultValue={item.time}
                 required

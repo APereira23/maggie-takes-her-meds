@@ -18,12 +18,19 @@ header {
   color: white;
   text-shadow: 2px 2px 2px black;
 }
+
+input {
+  background-color: rgb(254, 130, 223);
+  color: white;
+  font-size: 1.1rem;
+}
+
 .overview {
   height: 60vh;
   overflow: scroll;
   margin-top: 10px;
   padding: 10px;
-  padding-left: 20%;
+  padding-left: 15%;
   padding-bottom: 20px;
   background-color: rgb(15, 242, 193);
   border-radius: 10px;
@@ -132,6 +139,11 @@ header {
 .confirm-button:hover {
   background-color: purple;
   color: white;
+}
+
+.empty-list-message {
+  font-size: 0.8rem;
+  width: 70%;
 }
 
 footer {
