@@ -36,7 +36,7 @@ class AddItem extends Component {
                   ref={this.newNameRef}
                   type="text"
                   size="10"
-                  maxlength="20"
+                  maxlength="30"
                   required
                 /></td>
               </tr>
@@ -58,12 +58,12 @@ class AddItem extends Component {
                   ref={this.newTimeRef}
                   type="text"
                   size="10"
-                  maxLength="20"
+                  maxLength="30"
                   required
                 /></td>
               </tr>
               <tr>
-                <button type="submit">Submit</button>
+                <button className="confirm-button" type="submit">Submit</button>
               </tr>
             </thead>
           </table>

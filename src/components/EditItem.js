@@ -57,7 +57,7 @@ class EditItem extends Component {
                 type="number"
                 size="1"
                 min="0"
-                defaultValue={item.Dose}
+                defaultValue={item.dose}
                 required
               />
             </td>
@@ -68,16 +68,16 @@ class EditItem extends Component {
               <input 
                 id="editDose"
                 ref={this.editTimeRef}
-                type="number"
-                size="1"
+                type="text"
+                size="10"
                 min="0"
-                defaultValue={item.Time}
+                defaultValue={item.time}
                 required
               />
             </td>
           </tr>
           <tr>
-            <button onClick={this.edit}>Save</button>
+            <button className="confirm-button" onClick={this.edit}>Save</button>
           </tr>
         </thead>
     );
