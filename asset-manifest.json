@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/maggie-takes-her-meds/static/css/main.793caa64.css",
-    "main.js": "/maggie-takes-her-meds/static/js/main.845c2180.js",
+    "main.js": "/maggie-takes-her-meds/static/js/main.577e5c4f.js",
     "index.html": "/maggie-takes-her-meds/index.html",
     "main.793caa64.css.map": "/maggie-takes-her-meds/static/css/main.793caa64.css.map",
-    "main.845c2180.js.map": "/maggie-takes-her-meds/static/js/main.845c2180.js.map"
+    "main.577e5c4f.js.map": "/maggie-takes-her-meds/static/js/main.577e5c4f.js.map"
   },
   "entrypoints": [
     "static/css/main.793caa64.css",
-    "static/js/main.845c2180.js"
+    "static/js/main.577e5c4f.js"
   ]
 }
