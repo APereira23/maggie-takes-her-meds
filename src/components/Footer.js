@@ -11,6 +11,9 @@ class Footer extends Component {
         <p>
           Edit button icon by freepik.com
         </p>
+        <p>
+          2023 - Technology by António Pereira
+        </p>
       </footer>
     );
   }
