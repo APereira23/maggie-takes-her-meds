@@ -48,7 +48,7 @@ class Overview extends Component {
         </h2>
         <div className="empty-list-message">
           <p>Wow, so empty!</p>
-          <p>Click on the button on the upper right corner to start adding meds</p>
+          <p>Click the button on the upper right corner to start adding meds</p>
         </div>
       </div>
     );
